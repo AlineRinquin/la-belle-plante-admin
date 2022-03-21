@@ -1,7 +1,7 @@
 export class Plant {
 
   constructor(
-    public name: string ="",
+    public nom: string ="",
     public price: number = 1,
     public quantity: number = 0,
     public instock: boolean = true,
