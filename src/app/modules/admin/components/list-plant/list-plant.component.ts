@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Plant } from '../../models/plant';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
@@ -7,16 +9,40 @@ import { AdminService } from '../../services/admin.service';
   styleUrls: ['./list-plant.component.scss']
 })
 export class ListPlantComponent implements OnInit {
+  public listPlant : Plant[];
+  public subCollection$ = new Subject<Plant[]>();
 
-  constructor(private adminService : AdminService) { }
+  constructor(private adminService : AdminService) {
+    this.listPlant=[];
+    
+    this.subCollection$ = this.adminService.subCollection$;
+
+    this.adminService.refreshPlant();
+
+   }
 
   ngOnInit(): void {
 
-    this.adminService.collection$.subscribe(resp => {
-      console.log(resp);
+    // this.adminService.collection$.subscribe(resp => {
 
-    });
+    // });
 
+  }
+
+  onClickToUpdate(plant : Plant): void {
+
+    this.adminService.update(plant);
+
+  }
+
+  onClickToDelete(plantId : number){
+    console.log(plantId);
+    
+    this.adminService.deleteById(plantId).subscribe();
+  }
+
+  ngOnDestroy(): void {
+     this.subCollection$.unsubscribe();
   }
 
 }
