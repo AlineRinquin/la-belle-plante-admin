@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Plant } from '../../models/plant';
 import { AdminService } from '../../services/admin.service';
 
@@ -10,14 +11,18 @@ import { AdminService } from '../../services/admin.service';
 export class ModifPlantPageComponent implements OnInit {
   public data : Plant;
 
-  constructor(private adminService : AdminService) {
+  constructor(private adminService : AdminService,
+    private acivatedRoute : ActivatedRoute) {
     
     this.data = new Plant();
    }
 
   ngOnInit(): void {
 
-    this.data = this.adminService.plantById;
+    const plantId = this.acivatedRoute.snapshot.paramMap.get('id');
+    // this.data = this.adminService.getPlantById(plantId).subscribe(
+      
+    // );
 
   }
 

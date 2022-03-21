@@ -5,65 +5,41 @@
     <main class="form-ajoutPlant">
       <form (ngSubmit)="onSubmit()" [formGroup]="ajoutPlantForm">
         <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="floatingInputNomProduit"
-            placeholder=""
-            name="nomProduit"
-            formControlName="nomProduitFc"
-          />
+          <input type="text" class="form-control" id="floatingInputNomProduit" placeholder="" name="nomProduit"
+            formControlName="nomProduitFc" />
           <label for="floatingInputNomProduit">Nom du Produit</label>
         </div>
         <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="floatingInputCategorie"
-            placeholder=""
-            name="Categorie"
-            formControlName="CategorieFc"
-          />
+
+            <select class="form-control" id="floatingInputCategorie" placeholder="" name="Categorie"
+            formControlName="CategorieFc">
+            <option *ngFor="let category of listCategories | keyvalue" [value]="category.value" >{{category.value}}</option>
+          </select>
+
           <label for="floatingInputCategorie">Catégorie</label>
         </div>
         <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="floatingInputPrix"
-            placeholder=""
-            name="prix"
-            formControlName="prixFc"
-          />
+          <input type="text" class="form-control" id="floatingInputPrix" placeholder="" name="prix"
+            formControlName="prixFc" />
           <label for="floatingInputPrix">Prix</label>
         </div>
 
         <div class="form-floating">
-          <input
-            type="number"
-            class="form-control"
-            id="floatingInputQuantite"
-            placeholder=""
-            name="quantite"
-            formControlName="quantiteFc"
-          />
+          <input type="number" class="form-control" id="floatingInputQuantite" placeholder="" name="quantite"
+            formControlName="quantiteFc" />
           <label for="floatingInputQuantite">Quantité</label>
         </div>
         <div class="form-floating">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="testcategory"
-            id="floatingInputStock"
-          />
+          <select type="text" class="form-control" id="floatingInputStock" placeholder="" name="stock"
+            formControlName="stockFc">
+            <option value="disponible">disponible</option>
+            <option value="partiellement disponible">partiellement disponible</option>
+            <option value="non disponible">indisponible</option>
+          </select>
           <label for="floatingInputStock">Stock</label>
         </div>
 
-        <button
-          class="w-100 btn btn-lg btn-secondary"
-          type="submit"
-          [disabled]="ajoutPlantForm.invalid"
-        >
+        <button class="w-100 btn btn-lg btn-secondary" type="submit" [disabled]="ajoutPlantForm.invalid">
           Valider
         </button>
       </form>

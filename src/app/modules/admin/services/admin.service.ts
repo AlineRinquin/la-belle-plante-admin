@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of, Subject, tap } from 'rxjs';
+import { PlantouneService } from 'src/app/services/plantoune.service';
 import { environment } from 'src/environments/environment';
 import { Plant } from '../models/plant';
 
@@ -13,9 +14,11 @@ export class AdminService {
   public subCollection$ = new Subject<Plant[]>();
   private urlApi = environment.apiUrl;
   public listPlant : Plant[];
+  public plantById :  Plant;
 
   constructor(private http: HttpClient) {
     this.listPlant=[];
+    this.plantById = new Plant() ; 
 
     this.collection$ = this.http.get<any[]>(`${this.urlApi}/list_products`).pipe(
       map(tabPlant => {
@@ -34,6 +37,49 @@ export class AdminService {
       })
     );
    }
+
+   getPlantById(plant_id: any): Observable<Plant> {
+
+    return this.http.get<Plant>(`${this.urlApi}/list_products?id=${plant_id}`).pipe(
+      map(obj => {
+          return new Plant(
+            obj.nom,
+            obj.price,
+            obj.quantity,
+            obj.instock,
+            obj.category,
+            obj.urlPicture,
+            obj.rating,
+            obj.id
+            );
+          }
+          )
+          )
+    
+  }
+  
+   public getById(plant: Plant): any {
+
+    this.plantById = plant;
+
+    // return this.http.get<Plant>(`${this.urlApi}/list_products/${plantId}`).pipe(
+    //   map(obj =>{
+        
+    //     return new Plant(
+    //       obj.nom,
+    //       obj.price,
+    //       obj.quantity,
+    //       obj.instock,
+    //       obj.category,
+    //       obj.urlPicture,
+    //       obj.rating,
+    //       obj.id
+    //       );
+    //   })
+          
+    //     )
+    }
+    
 
    public add(plant: Plant): Observable<Plant> {
     return this.http.post<Plant>(`${this.urlApi}/list_products`, plant).pipe(

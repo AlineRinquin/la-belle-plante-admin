@@ -5,13 +5,17 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AddUpdatePlantComponent } from './components/add-update-plant/add-update-plant.component';
 import { ListPlantComponent } from './components/list-plant/list-plant.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AddPlantPageComponent } from './pages/add-plant-page/add-plant-page.component';
+import { ModifPlantPageComponent } from './pages/modif-plant-page/modif-plant-page.component';
 
 
 @NgModule({
   declarations: [
     AddUpdatePlantComponent,
     ListPlantComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    AddPlantPageComponent,
+    ModifPlantPageComponent
   ],
   imports: [
     CommonModule,

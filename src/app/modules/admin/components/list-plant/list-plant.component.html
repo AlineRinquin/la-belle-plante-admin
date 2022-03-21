@@ -21,9 +21,9 @@
             <td class="border">{{plant.quantity}}</td>
             <td class="border">{{plant.instock}}</td>
             <td class="border">
-                <!-- <button (click)="onClickToUpdate(plant)">
+                <button (click)="onClickToUpdate(plant.id)">
                     <i class="bi bi-pencil"></i>
-                </button> -->
+                </button>
                 <button class="delete"  (click)="onClickToDelete(plant.id)">
                     <i class="bi bi-trash"></i>
                 </button>

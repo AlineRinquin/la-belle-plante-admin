@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { Plant } from '../../models/plant';
 import { AdminService } from '../../services/admin.service';
@@ -12,7 +13,8 @@ export class ListPlantComponent implements OnInit {
   public listPlant : Plant[];
   public subCollection$ = new Subject<Plant[]>();
 
-  constructor(private adminService : AdminService) {
+  constructor(private adminService : AdminService,
+    private router : Router) {
     this.listPlant=[];
     
     this.subCollection$ = this.adminService.subCollection$;
@@ -29,9 +31,10 @@ export class ListPlantComponent implements OnInit {
 
   }
 
-  onClickToUpdate(plant : Plant): void {
+  onClickToUpdate(plantId : number): void {
 
-    this.adminService.update(plant);
+    //this.adminService.getById(plant);
+    this.router.navigate([`admin/modif/${plantId}`]);
 
   }
 
