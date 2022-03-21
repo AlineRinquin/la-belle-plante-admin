@@ -1,1 +1,72 @@
-<p>add-update-plant works!</p>
+<div class="row">
+  <div class="col-md-auto"></div>
+  <div class="ajoutPlant-form text-center">
+    <h3>Ajouter un produit</h3>
+    <main class="form-ajoutPlant">
+      <form (ngSubmit)="onSubmit()" [formGroup]="ajoutPlantForm">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInputNomProduit"
+            placeholder=""
+            name="nomProduit"
+            formControlName="nomProduitFc"
+          />
+          <label for="floatingInputNomProduit">Nom du Produit</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInputCategorie"
+            placeholder=""
+            name="Categorie"
+            formControlName="CategorieFc"
+          />
+          <label for="floatingInputCategorie">Catégorie</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInputPrix"
+            placeholder=""
+            name="prix"
+            formControlName="prixFc"
+          />
+          <label for="floatingInputPrix">Prix</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="number"
+            class="form-control"
+            id="floatingInputQuantite"
+            placeholder=""
+            name="quantite"
+            formControlName="quantiteFc"
+          />
+          <label for="floatingInputQuantite">Quantité</label>
+        </div>
+        <div class="form-floating">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="testcategory"
+            id="floatingInputStock"
+          />
+          <label for="floatingInputStock">Stock</label>
+        </div>
+
+        <button
+          class="w-100 btn btn-lg btn-secondary"
+          type="submit"
+          [disabled]="ajoutPlantForm.invalid"
+        >
+          Valider
+        </button>
+      </form>
+    </main>
+  </div>
+</div>
