@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-list-plant',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPlantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminService : AdminService) { }
 
   ngOnInit(): void {
+
+    this.adminService.collection$.subscribe(resp => {
+      console.log(resp);
+
+    });
+
   }
 
 }
