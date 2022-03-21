@@ -1,26 +1,30 @@
-<table>
-    <thead>
+<table class="border">
+    <thead class="border head">
         <tr>
             <th>Nom du produit</th>
             <th>Catégorie</th>
             <th>Prix</th>
             <th>Quantité</th>
             <th>En stock</th>
-            <th>Action</th>
+            <th>Action
+                <button class="add">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let plant of subCollection$ | async">
-            <td>{{plant.nom}}</td>
-            <td>{{plant.category}}</td>
-            <td>{{plant.price}}</td>
-            <td>{{plant.quantity}}</td>
-            <td>{{plant.instock}}</td>
-            <td>
+            <td class="border">{{plant.nom}}</td>
+            <td class="border">{{plant.category}}</td>
+            <td class="border">{{plant.price}}</td>
+            <td class="border">{{plant.quantity}}</td>
+            <td class="border">{{plant.instock}}</td>
+            <td class="border">
                 <!-- <button (click)="onClickToUpdate(plant)">
                     <i class="bi bi-pencil"></i>
                 </button> -->
-                <button  (click)="onClickToDelete(plant.id)">
+                <button class="delete"  (click)="onClickToDelete(plant.id)">
                     <i class="bi bi-trash"></i>
                 </button>
             </td>
