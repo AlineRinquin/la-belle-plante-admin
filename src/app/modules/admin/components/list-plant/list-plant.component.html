@@ -1,5 +1,5 @@
 <div class="center">
-<table class="border">
+<table >
     <thead class="border head">
         <tr>
             <th>Nom du produit</th>
@@ -16,12 +16,12 @@
     </thead>
     <tbody>
         <tr *ngFor="let plant of subCollection$ | async">
-            <td class="border">{{plant.nom}}</td>
-            <td class="border">{{plant.category}}</td>
-            <td class="border">{{plant.price}}</td>
-            <td class="border">{{plant.quantity}}</td>
-            <td class="border">{{plant.instock}}</td>
-            <td class="border">
+            <td>{{plant.nom}}</td>
+            <td>{{plant.category}}</td>
+            <td>{{plant.price}}</td>
+            <td>{{plant.quantity}}</td>
+            <td>{{plant.instock}}</td>
+            <td>
                 <button class="update" (click)="onClickToUpdate(plant.id)">
                     <i class="bi bi-pencil"></i>
                 </button>
