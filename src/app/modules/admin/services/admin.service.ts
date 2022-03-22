@@ -31,7 +31,7 @@ export class AdminService {
             obj.product_qty,
             obj.product_instock,
             obj.product_breadcrumb_label,
-            obj.product_url_page,
+            obj.product_url_picture,
             obj.rating,
             obj.id
           );
@@ -52,7 +52,7 @@ export class AdminService {
           obj.product_qty,
           obj.product_instock,
           obj.product_breadcrumb_label,
-          obj.product_url_page,
+          obj.product_url_picture,
           obj.rating,
           obj.id
         );
@@ -91,7 +91,7 @@ export class AdminService {
       product_qty: plant.quantity,
       product_instock: plant.instock,
       product_breadcrumb_label: plant.category,
-      product_url_page: plant.urlPicture,
+      product_url_picture: plant.urlPicture,
       rating: plant.rating,
     }
 
@@ -115,7 +115,7 @@ export class AdminService {
       product_qty: plant.quantity,
       product_instock: plant.instock,
       product_breadcrumb_label: plant.category,
-      product_url_page: plant.urlPicture,
+      product_url_picture: plant.urlPicture,
       rating: plant.rating,
     }
 
