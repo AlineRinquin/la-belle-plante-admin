@@ -7,28 +7,18 @@
       "product_qty": 20,
       "product_instock": "partiellement disponible",
       "product_breadcrumb_label": "Plantes Fleuries",
-      "product_url_page": "https://www.truffaut.com/anthurium-elipticum-jungle-bush-pot-deco-fonce-d24cm-910762.html",
+      "product_url_picture": "https://picsum.photos/id/18/200/300",
       "rating": 0
     },
     {
       "id": "801427",
-      "product_name": "Strelitzia Nicolai : D.21-H.75",
+      "product_name": "Strelitzia Nicolai : ",
       "product_price": "59,99",
-      "product_instock": "disponible",
-      "product_discount_code": "",
-      "product_color": "Blanc",
-      "product_unitprice_ati": "59.99",
-      "product_unitprice_tf": "54.5",
-      "product_discount_tf": "0.00",
-      "product_discount_ati": "0.00",
       "product_qty": 0,
+      "product_instock": "disponible",
       "product_breadcrumb_label": "Plantes Fleuries",
-      "product_url_page": "https://www.truffaut.com/strelitzia-nicolai-d-21-h-75-801427.html",
       "product_url_picture": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801427_001.jpg",
-      "product_shipping_method": null,
-      "product_image_source": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801427_001.jpg",
-      "product_seller": "market place",
-      "product_web_only": "non"
+      "rating": 0
     },
     {
       "id": "910744",
