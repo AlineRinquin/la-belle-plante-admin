@@ -1,1 +1,1 @@
-<app-add-update-plant *ngIf="data" [plant]="data"></app-add-update-plant>
+<app-add-update-plant *ngIf="data" [plant]="data" (submitted)="editPlant($event)"></app-add-update-plant>

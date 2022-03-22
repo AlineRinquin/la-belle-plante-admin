@@ -10,7 +10,7 @@ export class Plant {
     public category = Category.pf,
     public urlPicture: string = "https://picsum.photos/id/18/200/300",
     public rating: number = 0,
-    public id : number = 0
+    public id : string = ''
 
   ){}
 }

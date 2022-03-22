@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -18,6 +18,7 @@ export class AddUpdatePlantComponent implements OnInit {
   public ajoutPlantForm: FormGroup;
   @Input() public plant !: Plant;
   listCategories = Category;
+  @Output() submitted = new EventEmitter();
 
   constructor(private fb: FormBuilder) {
     this.ajoutPlantForm = new FormGroup({});
@@ -39,6 +40,24 @@ export class AddUpdatePlantComponent implements OnInit {
   }
 
   public onSubmit(): void {
+    console.log(this.ajoutPlantForm.value);
+  
+      const plant: Plant = {
+        id: this.ajoutPlantForm.value['id'],
+        nom: this.ajoutPlantForm.value['nomProduitFc'],
+        category : this.ajoutPlantForm.value['CategorieFc'],
+        price : this.ajoutPlantForm.value['prixFc'],
+        quantity : this.ajoutPlantForm.value['quantiteFc'],
+        instock :this.ajoutPlantForm.value['stockFc'],
+        urlPicture : this.plant.urlPicture,
+        rating : this.plant.rating
+        
+      };
+  
+
+    this.submitted.emit(plant);
+
+
   }
 
 

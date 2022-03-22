@@ -31,21 +31,21 @@ export class ListPlantComponent implements OnInit {
 
   }
 
-  onClickToUpdate(plantId : number): void {
+  onClickToUpdate(plantId : string): void {
 
     //this.adminService.getById(plant);
     this.router.navigate([`admin/modif/${plantId}`]);
 
   }
 
-  onClickToDelete(plantId : number){
+  onClickToDelete(plantId : string){
     console.log(plantId);
     
     this.adminService.deleteById(plantId).subscribe();
   }
 
   ngOnDestroy(): void {
-     this.subCollection$.unsubscribe();
+     //this.subCollection$.unsubscribe();
   }
 
 }
