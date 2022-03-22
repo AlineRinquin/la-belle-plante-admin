@@ -14,12 +14,10 @@ export class AdminService {
   public collection$!: Observable<Plant[]>;
   public subCollection$ = new Subject<Plant[]>();
   private urlApi = environment.apiUrl;
-  public listPlant: Plant[];
   public plantById: Plant;
 
   constructor(private http: HttpClient,
     private route: Router) {
-    this.listPlant = [];
     this.plantById = new Plant();
 
     this.collection$ = this.http.get<any[]>(`${this.urlApi}/list_products`).pipe(
@@ -142,8 +140,6 @@ export class AdminService {
   public refreshPlant(): void {
 
     this.collection$.subscribe((listPlant: Plant[]) => {
-      this.listPlant = [...listPlant];
-
       this.subCollection$.next(listPlant);
     })
   }
