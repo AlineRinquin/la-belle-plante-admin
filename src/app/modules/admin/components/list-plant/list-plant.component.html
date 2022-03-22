@@ -1,3 +1,4 @@
+<div class="center">
 <table class="border">
     <thead class="border head">
         <tr>
@@ -21,7 +22,7 @@
             <td class="border">{{plant.quantity}}</td>
             <td class="border">{{plant.instock}}</td>
             <td class="border">
-                <button (click)="onClickToUpdate(plant.id)">
+                <button class="update" (click)="onClickToUpdate(plant.id)">
                     <i class="bi bi-pencil"></i>
                 </button>
                 <button class="delete"  (click)="onClickToDelete(plant.id)">
@@ -31,3 +32,4 @@
         </tr>
     </tbody>
 </table>
+</div>
