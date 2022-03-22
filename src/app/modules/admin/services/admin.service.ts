@@ -38,24 +38,24 @@ export class AdminService {
     );
    }
 
-   getPlantById(plant_id: any): Observable<Plant> {
+   getPlantById(plant_id: any): Observable<any> {
 
-    return this.http.get<Plant>(`${this.urlApi}/list_products?id=${plant_id}`).pipe(
+    return this.http.get<any>(`${this.urlApi}/list_products/${plant_id}`).pipe(
       map(obj => {
-          return new Plant(
-            obj.nom,
-            obj.price,
-            obj.quantity,
-            obj.instock,
-            obj.category,
-            obj.urlPicture,
-            obj.rating,
-            obj.id
-            );
-          }
-          )
-          )
-    
+        console.log(obj);
+        
+        return new Plant(
+          obj.product_name,
+          obj.product_price,
+          obj.product_qty,
+          obj.product_instock,
+          obj.product_breadcrumb_label,
+          obj.product_url_page,
+          obj.rating,
+          parseInt(obj.id)
+        );
+      })
+    )
   }
   
    public getById(plant: Plant): any {

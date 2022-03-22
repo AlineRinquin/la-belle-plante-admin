@@ -10,7 +10,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'page', pathMatch: 'full'}, 
     { path: 'page', component: AdminPageComponent }, 
     { path: 'ajout', component: AddPlantPageComponent }, 
-    { path: 'modif', component: ModifPlantPageComponent }, 
+    { path: 'modif/:id', component: ModifPlantPageComponent }, 
     { path: '**', component: PageNotFoundComponent }
 ];
 
